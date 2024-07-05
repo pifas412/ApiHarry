@@ -1,25 +1,62 @@
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+<div class="container">
+    <div class="card">
+        <div class="card-header" >
+            <h2 class="text-center">Lista de personajes</h2>
+        </div>
     </div>
-  </nav>
-
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Alternate name</th>
+                    <th>Species</th>
+                    <th>Gender</th>
+                    <th>House</th>
+                    <th>Date of Birth</th>
+                    <th>Wizard</th>
+                    <th>Ancestry</th>
+                    <th>Eye Colour</th>
+                    <th>Hair Colour</th>
+                    <th>Wand</th>
+                    <th>Patronus</th>
+                    <th>Hogwarts Student</th>
+                    <th>Hogwarts Staff</th>
+                    <th>Actor</th>
+                    <th>Alternate Actors</th>
+                    <th>Alive</th>
+                    <th>Image</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let h of listaH">
+                    <td>{{h.id}}</td>
+                    <td>{{h.name}}</td>
+                    <td>{{h.alternate_names}}</td>
+                    <td>{{h.species}}</td>
+                    <td>{{h.gender}}</td>
+                    <td>{{h.house}}</td>
+                    <td>{{h.dateOfBirth}}</td>
+                    <td>{{h.wizard}}</td>
+                    <td>{{h.ancestry}}</td>
+                    <td>{{h.eyeColour}}</td>
+                    <td>{{h.hairColour}}</td>
+                    <td>{{h.wand.core}}</td>
+                    <td>{{h.patronus}}</td>
+                    <td>{{h.hogwartsStudent}}</td>
+                    <td>{{h.hogwartsStaff}}</td>
+                    <td>{{h.actor}}</td>
+                    <td>{{h.alternate_actors}}</td>
+                    <td>{{h.alive}}</td>
+                    <td><img [src]="h.image" alt="{{h.name}}" width="100"></td>
+                    <td><a type="button" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i></a></td>
+                    <td><a type="button" class="btn btn-outline-danger"><i
+                            class="bi bi-file-earmark-x"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a type ="button" class="card-link">Another link</a>
-    </div>
-  </div>
+</div>
